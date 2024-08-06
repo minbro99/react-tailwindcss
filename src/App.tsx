@@ -1,33 +1,28 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Main from "./components/Main";
+// import Main from "./components/Main";
 import NavBar from "./components/NavBar";
 import Header from './components/Header';
 import Supporter from './components/Supporter';
-import Home from './components/Home';
 
-
+import LearnMore from "./pages/LearnMore";
 import Login from './pages/Login';
-import MyProfie from './pages/MyProfile';
-import LearnMore from './pages/LearnMore';
-
-
-
+import MyProfile from './pages/MyProfile';
+import Setting from './pages/MyProfile';
 
 const App: React.FC = () => {
   return(
     <>
     <Router>
-    <Main />
-    
+    {/* <Main />      */}
     <NavBar />
-    <Header />    
+    <Header />
     <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/myprofile" element={<MyProfie />} />
-      <Route path="/home" element={<Home />} />
       <Route path="/learnmore" element={<LearnMore />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/myprofile" element={<MyProfile />} />
+      <Route path="/setting" element={<Setting />} />
     </Routes>
     <Supporter />
     </Router>
