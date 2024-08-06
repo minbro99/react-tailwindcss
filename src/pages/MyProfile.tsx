@@ -27,7 +27,7 @@ export default function Example() {
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-4">
               <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
-                Username
+                User address
               </label>
               <div className="mt-2">
                 <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
@@ -46,7 +46,7 @@ export default function Example() {
 
             <div className="col-span-full">
               <label htmlFor="about" className="block text-sm font-medium leading-6 text-gray-900">
-                About
+                Introduction
               </label>
               <div className="mt-2">
                 <textarea
@@ -57,12 +57,12 @@ export default function Example() {
                   defaultValue={''}
                 />
               </div>
-              <p className="mt-3 text-sm leading-6 text-gray-600">Write a few sentences about yourself.</p>
+              <p className="mt-3 text-sm leading-6 text-gray-600">Tell me about who you are!</p>
             </div>
 
             <div className="col-span-full">
               <label htmlFor="photo" className="block text-sm font-medium leading-6 text-gray-900">
-                Photo
+                Photo of you
               </label>
               <div className="mt-2 flex items-center gap-x-3">
                 <UserCircleIcon aria-hidden="true" className="h-12 w-12 text-gray-300" />
@@ -90,7 +90,7 @@ export default function Example() {
                       <span>Upload a file</span>
                       <input id="file-upload" name="file-upload" type="file" className="sr-only" />
                     </label>
-                    <p className="pl-1">or drag and drop</p>
+                    <p className="pl-1">drag fiiles here to add them here</p>
                   </div>
                   <p className="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
                 </div>
@@ -163,13 +163,16 @@ export default function Example() {
                   <option>United States</option>
                   <option>Canada</option>
                   <option>Mexico</option>
+                  <option>Korea</option>
+                  <option>China</option>
+                  <option>Japan</option>
                 </select>
               </div>
             </div>
 
             <div className="col-span-full">
               <label htmlFor="street-address" className="block text-sm font-medium leading-6 text-gray-900">
-                Street address
+                post address
               </label>
               <div className="mt-2">
                 <input
@@ -184,7 +187,7 @@ export default function Example() {
 
             <div className="sm:col-span-2 sm:col-start-1">
               <label htmlFor="city" className="block text-sm font-medium leading-6 text-gray-900">
-                City
+                detail address
               </label>
               <div className="mt-2">
                 <input
@@ -197,35 +200,7 @@ export default function Example() {
               </div>
             </div>
 
-            <div className="sm:col-span-2">
-              <label htmlFor="region" className="block text-sm font-medium leading-6 text-gray-900">
-                State / Province
-              </label>
-              <div className="mt-2">
-                <input
-                  id="region"
-                  name="region"
-                  type="text"
-                  autoComplete="address-level1"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
-
-            <div className="sm:col-span-2">
-              <label htmlFor="postal-code" className="block text-sm font-medium leading-6 text-gray-900">
-                ZIP / Postal code
-              </label>
-              <div className="mt-2">
-                <input
-                  id="postal-code"
-                  name="postal-code"
-                  type="text"
-                  autoComplete="postal-code"
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
+            
           </div>
         </div>
 
