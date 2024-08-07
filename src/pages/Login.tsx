@@ -24,7 +24,7 @@ export const Login = () => {
         }
 
         if (userName === validUserName && userPassword === validPassword) {
-            window.location.href = '/';
+            window.location.href = '/loginsuccess';
         } else {
             alert('잘못된 사용자 이름 또는 비밀번호입니다.');
         }
