@@ -1,40 +1,22 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-// import Main from "./components/Main";
-import NavBar from "./components/NavBar";
-import Header from './components/Header';
-import Supporter from './components/Supporter';
-import {HomeLogin} from './components/HomeLogin';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import LearnMore from "./pages/LearnMore";
+import Main from './components/Main';
 
-import MyProfile from './pages/MyProfile';
-import Setting from './pages/MyProfile';
-import ShoppingCart from "./pages/Shoppingcart";
 import Home from './pages/Home';
-import IdFind from "./pages/IdFind";
-
+import { Login } from "./pages/Login";
 
 const App: React.FC = () => {
   return(
     <>
-    <HomeLogin />
-    <Router>
     
-    {/* <Main />      */}
-    <NavBar />
-    <Header />
+    <Router>
     <Routes>
-      
-      <Route path="/learnmore" element={<LearnMore />} />
+      <Route path="/" element={<Main />} />
       <Route path="/home" element={<Home />} />
-      <Route path="/myprofile" element={<MyProfile />} />
-      <Route path="/setting" element={<Setting />} />
-      <Route path="/shoppingcart" element={<ShoppingCart />} />
-      <Route path="/idfid" element={<IdFind />} />
+      <Route path="/login" element={<Login />} />
     </Routes>
-    <Supporter />
     </Router>
     </>
   );
