@@ -10,6 +10,7 @@ import LearnMore from "./pages/LearnMore";
 import Login from './pages/Login';
 import MyProfile from './pages/MyProfile';
 import Setting from './pages/MyProfile';
+import ShoppingCart from "./pages/Shoppingcart";
 
 const App: React.FC = () => {
   return(
@@ -23,6 +24,7 @@ const App: React.FC = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/myprofile" element={<MyProfile />} />
       <Route path="/setting" element={<Setting />} />
+      <Route path="/shoppingcart" element={<ShoppingCart />} />
     </Routes>
     <Supporter />
     </Router>
