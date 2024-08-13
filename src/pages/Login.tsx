@@ -1,9 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export const Login = () => {
     const [userName, setUserName] = useState('');
     const [userPassword, setUserPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [rememberMe, setRememberMe] = useState(false);
+
+    useEffect(() => {
+        const savedUserName = localStorage.getItem('rememberedUserName');
+        if (savedUserName) {
+            setUserName(savedUserName);
+            setRememberMe(true);
+        }
+    }, []);
 
     const handleLoginClick = (event: { preventDefault: () => void; }) => {
         event.preventDefault();
@@ -24,6 +33,11 @@ export const Login = () => {
         }
 
         if (userName === validUserName && userPassword === validPassword) {
+            if (rememberMe) {
+                localStorage.setItem('rememberedUserName', userName);
+            } else {
+                localStorage.removeItem('rememberedUserName');
+            }
             window.location.href = '/loginsuccess';
         } else {
             alert('잘못된 사용자 이름 또는 비밀번호입니다.');
@@ -35,7 +49,7 @@ export const Login = () => {
             <div className="bg-white w-full max-w-lg py-10 rounded-lg text-center">
                 <h3 className="text-3xl text-gray-800">로그인</h3>
                 <form className="flex flex-col mt-5 px-5" onSubmit={handleLoginClick}>
-                <div className="text-sm">
+                    <div className="text-sm">
                         <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
                             ID 찾기
                         </a>
@@ -62,8 +76,18 @@ export const Login = () => {
                     {errorMessage && (
                         <div className="text-red-500 text-sm mt-1">{errorMessage}</div>
                     )}
-                    
-                    
+                    <div className="flex items-center mt-3">
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                            checked={rememberMe}
+                            onChange={(e) => setRememberMe(e.target.checked)}
+                            className="mr-2"
+                        />
+                        <label htmlFor="rememberMe" className="text-sm text-gray-600">
+                            아이디 저장
+                        </label>
+                    </div>
                     <button
                         type="submit"
                         className="py-3 px-5 bg-gray-600 text-white mt-3 text-lg rounded-lg focus:outline-none hover:opacity-90"
